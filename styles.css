@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* navbar */
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: black;
+  border-bottom: 2px dotted gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  
+}
+.nav-container a{
+  text-decoration: none;
+  color: grey
+}
+.nav-container a:hover{
+  color: aliceblue;
+}
+
+/* FOOTER */
+footer{
+  margin-top: 7rem;
+  text-align: center;
+  background-color: black;
+  color: grey;
+  padding: 1rem;
+}
+
+/*main*/
+.banner-heading {
+  color: white;
+  background-color: grey;
+  padding: 1rem;
+  margin: 4rem;
+  text-align: center;
+}
+.banner-container {
+  margin: 5em;
+}
+.banner-container img {
+  width: 100%;
+}
+.intro{
+  display: flex;
+  background-color: paleturquoise;
+  padding: 2em;
+  margin: 5em;
+}
+
+
+.category-heading{
+  color: white;
+background-color: grey;
+padding: 1rem;
+margin: 4rem;
+text-align: center;
+}
+.category{
+  margin: 2em;
+  padding: 1em;
+}
+.category h3{
+  background-color: #fff;
+  padding: 0.25em;
+}
+.category1{
+  background-color: yellow;
+}
+.category2{
+  background-color: palevioletred;
+}
+.category3{
+  background-color: greenyellow;
+}
+.join-maincontainer{
+  display: flex;
+  justify-content: center;
+}
+.join{
+  text-align: center;
+  background-color:blueviolet;
+  margin:4em 2em;
+  padding: 1em;
+  border-radius: 1em;
+  max-width: 40rem;
+}
+.join h3{
+  padding: 0.5em;
+  color: white;
+}
+.join a button{
+  padding: .5em;
+  margin: .5em;
+  border-radius: 0.5em;
+  background-color: aqua;
+  color: red;
+  font-weight: bolder;
+}
+.join a button:hover{
+  cursor: pointer;
+  background-color: yellow;
+  height: 4em;
+}
