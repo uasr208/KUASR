@@ -33,6 +33,25 @@
         background-color: grey;
         cursor: pointer;
       }
+      .create{
+        background-color: #eb7474;
+        padding: 1em;
+        text-align: center;
+      }
+      form{
+        margin: 4em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+      }
+      #no-group{
+        background-color: aquamarine; 
+        padding: 0.5em; 
+        margin: 1em;
+        text-align: center;
+      }
+      
     </style>
   </head>
   <body>
@@ -82,15 +101,15 @@
       <img width="80%" src="images/Bow-pose-dhanurasana.webp" alt="" />
 
       <ul>
-        <li>Ustrasana (Camel Pose)</li>
-        <li>Dhanurasana (Bow Pose)</li>
-        <li>Virabhadrasana II (Warrior II Pose)</li>
+        <li id="aashana-1">Ustrasana (Camel Pose)</li>
+        <li id="aashana-2">Dhanurasana (Bow Pose)</li>
+        <li id="aashana-3">Virabhadrasana II (Warrior II Pose)</li>
       </ul>
       <button onclick="follow(this)" class="follow">FOLLOW</button>
     </div>
     <div class="group">
       <h2>4️⃣ Flex & Breathe Crew 🌬️🌀</h2>
-      <h3>Difficulty- level 3</h3>
+      <h3 id="Difficulty">Difficulty- level 3</h3>
       <img width="80%" src="images/mayurashana.jpg" alt="" />
 
       <ul>
@@ -112,6 +131,41 @@
       </ul>
       <button onclick="follow(this)" class="follow">FOLLOW</button>
     </div>
+    <div class="create">
+      <h2>CREATE YOUR GROUP</h2>
+    </div>
+    <!-- input section -->
+     <form action="">
+      <label for="groupName">GROUP NAME</label>
+      <input id="groupName" type="text" placeholder="enter group name" value="name">
+      <label for="difficulty">DIFFICULTY</label>
+      <input id="difficulty" type="text" placeholder="enter difficulty lavel" value="1">
+      <label for="aashana1">1ST AASHANA</label>
+      <input id="aashana1" type="text" placeholder=" enter first aashana" value="2">
+      <label for="aashana2">2ND AASHANA</label>
+      <input id="aashana2" type="text" placeholder="enter second aashana" value="3">
+      <label for="aashana3">3RD AASHANA</label>
+      <input id="aashana3" type="text" placeholder="enter third aashana" value="4">
+      <button id="form-submit">SUBMIT</button>
+     </form>
+     <!-- your group -->
+      <h2 style="background-color: antiquewhite; text-align: center;padding: 0.5em;">HERE IS YOUR GROUP</h2>
+      <div id="no-group">
+        <h3>you haven't created any group yet, first create one.</h3>
+      </div>
+      
+      <div id="user-group" class="group">
+        <h2 id="group-name">6️⃣ your group 🕉️🧘</h2>
+      <h3>Diificulty- level 4</h3>
+      <img width="80%" src="images/user-group.jpg" alt="" />
+
+      <ul>
+        <li>create first aashana</li>
+        <li>create second aashana</li>
+        <li>create third aashana</li>
+      </ul>
+      <button onclick="follow(this)" class="follow">DELETE</button>
+      </div>
     <!-- footer section -->
     <footer>
       <h3>&copy; 2025 ALL RIGHTS RESERVED Yogify -YOGASANA TRACKING APP</h3>
@@ -119,15 +173,46 @@
   </body>
 </html>
 <script>
+  
+  let user=document.getElementById("user-group");
   function follow(buttonElement) {
     if (buttonElement.textContent === "FOLLOW") {
       buttonElement.textContent = "FOLLOWING";
       buttonElement.style.color = "BLACK";
       buttonElement.style.backgroundColor = "PINK";
-    } else {
+    }
+    else if(buttonElement.textContent==="DELETE"){
+     user.style.display="none";
+    }
+     else {
       buttonElement.textContent = "FOLLOW";
       buttonElement.style.color = ""; // Reset to default color
       buttonElement.style.backgroundColor = ""; // Reset to default background
     }
-  }
+  };
+  let input1=document.getElementById("groupName").value;
+  let input1Re=document.getElementById("group-name").textContent;
+  let input2=document.getElementById("difficulty").value;
+  let input2Re=document.getElementById("Difficulty").value;
+  let input3=document.getElementById("aashana1").value;
+  let input3Re=document.getElementById("aashana-1").value;
+  let input4=document.getElementById("aashana2").value;
+  let input4Re=document.getElementById("aashana-2").value;
+  let input5=document.getElementById("aashana3").value;
+  let input5Re=document.getElementById("aashana-3").value;
+  let NOGROUP=document.getElementById("no-group");
+  let create=document.getElementById("form-submit");
+  create.addEventListener("click",creategroup);
+  function creategroup(){
+    event.preventDefault();
+    user.style.display="";
+    NOGROUP.style.display="none";
+    console.log(input1,input1Re,input2,input2Re,input3,input3Re,input4,input4Re,input5,input5Re)
+    input1Re=input1;
+    input2=input2Re;
+    input3=input3Re;
+    input4=input4Re;
+    input5=input5Re;
+  };
+
 </script>
