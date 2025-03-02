@@ -47,3 +47,5 @@ This project is open-source .
 ## Author
 Developed by **[UTKARSH ARUN SINGH]**
 
+live deployment link https://uasr208.github.io/KUASR/
+
