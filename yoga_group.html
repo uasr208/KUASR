@@ -1,25 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YOGA_GROUP_Yogify - Yogasanas Tracking App</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- header section -->
-  <header>
-    <nav class="nav-container">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT US</a>
-      <a href="contact.html">CONTACT US</a>
-      <a href="yoga_group.html">YOGA_GROUP</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YOGA_GROUP_Yogify - Yogasanas Tracking App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .main-heading {
+        padding: 2em;
+        margin: 4em 1em;
+        text-align: center;
+        background-color: grey;
+        color: white;
+      }
+      .group {
+        padding: 2em;
+        text-align: center;
+      }
+      .group ul li {
+        list-style: none;
+      }
+      .follow {
+        padding: 0.75em;
+        margin-top: 0.25em;
+        font-weight: bold;
+        font-size: larger;
+        border-radius: 0.5em;
+        color: white;
+        background-color: aqua;
+      }
+      .follow:hover {
+        background-color: grey;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header section -->
+    <header>
+      <nav class="nav-container">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="yoga_group.html">YOGA_GROUP</a>
+        <a href="contact.html">CONTACT US</a>
+      </nav>
+    </header>
+    <!-- main section -->
+    <h1 class="main-heading">find your yoga group</h1>
+    <!-- group -->
 
-  <!-- footer section -->
-  <footer>
-    <h3>&copy; 2025 ALL RIGHTS RESERVED Yogify -YOGASANA TRACKING APP</h3>
-  </footer>
-</body>
+    <div class="group">
+      <h2>1️⃣ ZenFlow Tribe 🌿✨</h2>
+      <h3>Difficulty- level 0</h3>
+      <img width="80%" src="images/Vrikshasana.jpg" alt="" />
+      <ul>
+        <li>Tadasana (Mountain Pose)</li>
+        <li>Vrikshasana (Tree Pose)</li>
+        <li>Bhujangasana (Cobra Pose)</li>
+      </ul>
+      <button onclick="follow(this)" class="follow">FOLLOW</button>
+    </div>
+    <div class="group">
+      <h2>2️⃣ Asana Warriors 🧘‍♂️🔥</h2>
+      <h3>Difficulty- level 1</h3>
+      <img
+        width="80%"
+        src="images/Setu-Bandha-Sarvangasana-postura-puente.jpg"
+        alt=""
+      />
+
+      <ul>
+        <li>Setu Bandhasana (Bridge Pose)</li>
+        <li>Balasana (Child’s Pose)</li>
+        <li>Trikonasana (Triangle Pose)</li>
+      </ul>
+      <button onclick="follow(this)" class="follow">FOLLOW</button>
+    </div>
+    <div class="group">
+      <h2>3️⃣ Harmony Stretchers 🌸💪</h2>
+      <h3>Difficulty- level 2</h3>
+      <img width="80%" src="images/Bow-pose-dhanurasana.webp" alt="" />
+
+      <ul>
+        <li>Ustrasana (Camel Pose)</li>
+        <li>Dhanurasana (Bow Pose)</li>
+        <li>Virabhadrasana II (Warrior II Pose)</li>
+      </ul>
+      <button onclick="follow(this)" class="follow">FOLLOW</button>
+    </div>
+    <div class="group">
+      <h2>4️⃣ Flex & Breathe Crew 🌬️🌀</h2>
+      <h3>Difficulty- level 3</h3>
+      <img width="80%" src="images/mayurashana.jpg" alt="" />
+
+      <ul>
+        <li>Ardha Matsyendrasana (Half Spinal Twist)</li>
+        <li>Eka Pada Bakasana (One-Legged Crane Pose)</li>
+        <li>Mayurasana (Peacock Pose)</li>
+      </ul>
+      <button onclick="follow(this)" class="follow">FOLLOW</button>
+    </div>
+    <div class="group">
+      <h2>5️⃣ Soulful Stretchers 🕉️🧘</h2>
+      <h3>Diificulty- level 4</h3>
+      <img width="80%" src="images/sirshashana.jpg" alt="" />
+
+      <ul>
+        <li>Sirsasana (Headstand)</li>
+        <li>Pincha Mayurasana (Forearm Stand)</li>
+        <li>Kapotasana (Pigeon Pose - Advanced)</li>
+      </ul>
+      <button onclick="follow(this)" class="follow">FOLLOW</button>
+    </div>
+    <!-- footer section -->
+    <footer>
+      <h3>&copy; 2025 ALL RIGHTS RESERVED Yogify -YOGASANA TRACKING APP</h3>
+    </footer>
+  </body>
 </html>
+<script>
+  function follow(buttonElement) {
+    if (buttonElement.textContent === "FOLLOW") {
+      buttonElement.textContent = "FOLLOWING";
+      buttonElement.style.color = "BLACK";
+      buttonElement.style.backgroundColor = "PINK";
+    } else {
+      buttonElement.textContent = "FOLLOW";
+      buttonElement.style.color = ""; // Reset to default color
+      buttonElement.style.backgroundColor = ""; // Reset to default background
+    }
+  }
+</script>

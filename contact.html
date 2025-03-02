@@ -1,25 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CONTACT US_Yogify - Yogasanas Tracking App</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- header section -->
-  <header>
-    <nav class="nav-container">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT US</a>
-      <a href="contact.html">CONTACT US</a>
-      <a href="yoga_group.html">YOGA_GROUP</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONTACT US_Yogify - Yogasanas Tracking App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .contact{
+        diplay:flex;
+        flex-direction: row;
+      }
+      .contact-item{
+        text-align: center;
+        background-color: yellow;
+        margin:1em;
+        padding: 2em;
+      }
+      @media screen and (max-width:440px) {
+        .contact-item{
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .contact h1{
+        background-color: palevioletred;
+        margin-top: 3em;
+        margin-bottom: 3em;
+      }
+      #form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .form-item{
+        margin: .5em;
+        max-width: 60%;
+      }
+      .btn{
+        margin: 1em;
+        padding: 1em;
+        border-radius: 0.5em;
+        background-color: magenta;
+        color: white;
+        font-weight: bold;
+        max-width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header section -->
+    <header>
+      <nav class="nav-container">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="yoga_group.html">YOGA_GROUP</a>
+        <a href="contact.html">CONTACT US</a>
+        
+      </nav>
+    </header>
+    <!-- main section -->
+    <div class="contact">
+      <h1 class="contact-item">📩 Contact Us</h1>
+      <h2 class="contact-item">
+        Have questions, feedback, or need support? Feel free to reach out! We’d
+        love to hear from you. 😊
+      </h2>
+      <h1 class="contact-item">📞 Get in Touch</h1>
+      <h2 class="contact-item">Address: [ABC CITY, O BLOCK ,NTH FLOOR,9900]</h2>
+      <h3 class="contact-item">📧 Email: support@yogacommunity.com</h3>
+      <h2 class="contact-item">📱 Phone: +123 456 7890</h2>
+      <h1 class="contact-item">
+        💬 Send Us a Message Fill out the form below, and we’ll get back to you
+        as soon as possible.
+      </h1>
+      <form id="form" action="" class="contact-item">
+        <label class="form-item" for="NAME">NAME</label>
+        <input class="form-item" id="NAME" type="text" placeholder="please enter your name">
+        <label class="form-item" for="EMAIL">EMAIL</label>
+        <input class="form-item" id="EMAIL" type="email" placeholder="enter your email address">
+        <label class="form-item" for="Message">MESSAGE</label>
+        <textarea class="form-item" name="" id="MESSAGE" placeholder="please write your message"></textarea>
+        <button onclick="message_recive()" class="btn">SUBMIT</button>
+      </form>
+    </div>
 
-  <!-- footer section -->
-  <footer>
-    <h3>&copy; 2025 ALL RIGHTS RESERVED Yogify -YOGASANA TRACKING APP</h3>
-  </footer>
-</body>
+    <!-- footer section -->
+    <footer>
+      <h3>&copy; 2025 ALL RIGHTS RESERVED Yogify -YOGASANA TRACKING APP</h3>
+    </footer>
+  </body>
 </html>
+<script>
+  function message_recive(){
+    alert("Thanks! for reaching out to us");
+  }
+</script>
+

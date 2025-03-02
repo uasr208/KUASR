@@ -17,6 +17,14 @@
   overflow: hidden;
   
 }
+@media screen and (max-width:440px){
+  .nav-container{
+    
+    display: grid;
+    grid-template-columns: repeat(2,1fr
+    );
+  }
+}
 .nav-container a{
   text-decoration: none;
   color: grey
@@ -42,6 +50,12 @@ footer{
   margin: 4rem;
   text-align: center;
 }
+@media screen and (max-width:440px){
+  .banner-heading{
+    margin-top: 8rem;
+  }
+}
+
 .banner-container {
   margin: 5em;
 }
@@ -78,7 +92,7 @@ text-align: center;
   background-color: palevioletred;
 }
 .category3{
-  background-color: greenyellow;
+  background-color: orange;
 }
 .join-maincontainer{
   display: flex;

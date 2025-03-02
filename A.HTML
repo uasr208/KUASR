@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Group</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="yoga-group">
+        <h1>🧘 Yoga Group</h1>
+        <p>Log your completed yogasanas, rate their difficulty, and track your progress.</p>
+        
+        <form id="yogaForm">
+            <label for="asana">Select Yogasana:</label>
+            <select id="asana" required>
+                <option value="">--Choose an Asana--</option>
+                <option value="Tadasana">Tadasana (Mountain Pose)</option>
+                <option value="Vrikshasana">Vrikshasana (Tree Pose)</option>
+                <option value="Bhujangasana">Bhujangasana (Cobra Pose)</option>
+                <option value="Sirsasana">Sirsasana (Headstand)</option>
+            </select>
+            
+            <label for="difficulty">Rate Difficulty:</label>
+            <select id="difficulty" required>
+                <option value="Easy">⭐ Easy</option>
+                <option value="Medium">⭐⭐ Medium</option>
+                <option value="Hard">⭐⭐⭐ Hard</option>
+            </select>
+            
+            <button type="submit">Log Asana</button>
+        </form>
+        
+        <h2>🏆 Group Progress</h2>
+        <ul id="asanaList"></ul>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let asanaList = document.getElementById("asanaList");
+            let savedAsanas = JSON.parse(localStorage.getItem("yogaProgress")) || [];
+            
+            function updateList() {
+                asanaList.innerHTML = "";
+                savedAsanas.forEach((asana, index) => {
+                    let listItem = document.createElement("li");
+                    listItem.textContent = `${asana.name} - Difficulty: ${asana.difficulty}`;
+                    
+                    let deleteButton = document.createElement("button");
+                    deleteButton.textContent = "🗑️ Remove";
+                    deleteButton.style.marginLeft = "10px";
+                    deleteButton.onclick = function() {
+                        savedAsanas.splice(index, 1);
+                        localStorage.setItem("yogaProgress", JSON.stringify(savedAsanas));
+                        updateList();
+                    };
+                    
+                    listItem.appendChild(deleteButton);
+                    asanaList.appendChild(listItem);
+                });
+            }
+            
+            updateList();
+            
+            document.getElementById("yogaForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                
+                let asana = document.getElementById("asana").value;
+                let difficulty = document.getElementById("difficulty").value;
+                
+                if (asana && difficulty) {
+                    let newAsana = { name: asana, difficulty: difficulty };
+                    savedAsanas.push(newAsana);
+                    localStorage.setItem("yogaProgress", JSON.stringify(savedAsanas));
+                    updateList();
+                }
+            });
+        });
+    </script>
+    
+    <footer>
+        <p>&copy; 2025 Yoga Community App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

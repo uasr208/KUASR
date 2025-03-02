@@ -91,4 +91,6 @@ const yogasanas = [
   }
 ];
 
+
+
 // Example usage: console.log(yogasanas);
